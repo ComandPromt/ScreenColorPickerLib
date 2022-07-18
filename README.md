@@ -24,7 +24,7 @@
 
 ~~~java
 
-		CopyColor panel = new CopyColor(true);
+		CopyColor panel = new CopyColor(Color.BLACK,true);
 		
 		/*	true --> If the transparency is activated,
 
