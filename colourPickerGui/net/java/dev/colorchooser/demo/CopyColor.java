@@ -12,8 +12,9 @@ import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
+import com.bric.swing.ColorPicker;
+
 import net.java.dev.colorchooser.ColorChooser;
-import net.java.dev.colorchooser.TextColor;
 
 @SuppressWarnings("all")
 
@@ -21,7 +22,9 @@ public class CopyColor extends javax.swing.JPanel {
 
 	public static boolean transparency;
 
-	TextColor color;
+	Color colour;
+
+	ColorChooser lblNewLabel;
 
 	private static Clipboard getSystemClipboard() {
 
@@ -33,7 +36,9 @@ public class CopyColor extends javax.swing.JPanel {
 
 	}
 
-	public CopyColor(boolean transparency) throws IOException {
+	public CopyColor(Color color, boolean transparency) throws IOException {
+
+		this.colour = color;
 
 		this.transparency = transparency;
 
@@ -41,25 +46,13 @@ public class CopyColor extends javax.swing.JPanel {
 
 		this.setBackground(Color.WHITE);
 
-		ColorChooser lblNewLabel = new ColorChooser();
+		lblNewLabel = new ColorChooser();
 
-		lblNewLabel.setColor(Color.BLACK);
+		lblNewLabel.setColor(color);
 
 		lblNewLabel.transparency = transparency;
 
 		add(lblNewLabel);
-
-		color = new TextColor();
-
-		color.setFont(new Font("Tahoma", Font.PLAIN, 14));
-
-		if (transparency) {
-
-			color.setText(color.getText() + "ff");
-
-		}
-
-		add(color);
 
 		JButton btnNewButton_2 = new JButton("Copy");
 
@@ -69,7 +62,7 @@ public class CopyColor extends javax.swing.JPanel {
 
 				Clipboard clipboard = getSystemClipboard();
 
-				clipboard.setContents(new StringSelection(color.getText()), null);
+				clipboard.setContents(new StringSelection(getHtmlColor()), null);
 			}
 
 		});
@@ -84,14 +77,41 @@ public class CopyColor extends javax.swing.JPanel {
 
 		add(btnNewButton_2);
 
-		setSize(216, 36);
+		setSize(95, 36);
+
+	}
+
+	public Color getColor() {
+
+		return lblNewLabel.getColor();
 
 	}
 
 	public String getHtmlColor() {
 
-		return String.format("#%02x%02x%02x", ColorChooser.color.getRed(), ColorChooser.color.getGreen(),
-				ColorChooser.color.getBlue());
+		Color color;
+
+		if (this.lblNewLabel.getColor() == null) {
+
+			color = colour;
+
+		}
+
+		else {
+
+			color = this.lblNewLabel.getColor();
+
+		}
+
+		String transparencia = "";
+
+		if (this.transparency) {
+
+			transparencia = Integer.toHexString(ColorPicker.opacitySlider.getValue());
+
+		}
+
+		return String.format("#%02x%02x%02x", color.getRed(), color.getGreen(), color.getBlue()) + transparencia;
 
 	}
 

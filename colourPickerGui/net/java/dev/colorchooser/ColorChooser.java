@@ -13,21 +13,21 @@ import javax.swing.UIManager;
 
 public final class ColorChooser extends JComponent {
 
-	public static final String UI_CLASS_ID = "nbColorChooserUI"; 
+	public static final String UI_CLASS_ID = "nbColorChooserUI";
 
 	private transient Palette[] palettes = null;
 
-	public static Color color = Color.BLUE;
+	public Color color = Color.BLUE;
 
 	private transient Color transientColor = null;
 
 	private transient List<ActionListener> actionListenerList;
 
-	public static final String PROP_COLOR = "color"; 
+	public static final String PROP_COLOR = "color";
 
-	public static final String PROP_TRANSIENT_COLOR = "transientColor"; 
+	public static final String PROP_TRANSIENT_COLOR = "transientColor";
 
-	public static final String PROP_CONTINUOUS_PALETTE = "continuousPalette"; 
+	public static final String PROP_CONTINUOUS_PALETTE = "continuousPalette";
 
 	public static final String PROP_PICKER_VISIBLE = "pickerVisible";
 
@@ -131,7 +131,7 @@ public final class ColorChooser extends JComponent {
 
 			repaint();
 
-			firePropertyChange(PROP_COLOR, old, c); 
+			firePropertyChange(PROP_COLOR, old, c);
 
 		}
 
@@ -236,7 +236,7 @@ public final class ColorChooser extends JComponent {
 
 		if (palettes != null && palettes.length > 8) {
 
-			throw new IllegalArgumentException("Must be <= 8 palettes"); 
+			throw new IllegalArgumentException("Must be <= 8 palettes");
 
 		}
 
@@ -250,7 +250,7 @@ public final class ColorChooser extends JComponent {
 
 		this.palettes = palettes;
 
-		firePropertyChange("palettes", old, palettes.clone()); 
+		firePropertyChange("palettes", old, palettes.clone());
 
 	}
 
@@ -266,7 +266,7 @@ public final class ColorChooser extends JComponent {
 
 	static String getString(String key) {
 
-		String BUNDLE = "net.java.dev.colorchooser.Bundle"; 
+		String BUNDLE = "net.java.dev.colorchooser.Bundle";
 
 		try {
 

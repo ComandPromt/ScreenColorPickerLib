@@ -5,12 +5,18 @@
 ~~~java
 
     <dependencies>
-    		<dependency>
+    		
+		<dependency>
+			
 			<groupId>com.1stleg</groupId>
+			
 			<artifactId>jnativehook</artifactId>
+			
 			<version>2.1.0</version>
-        </dependency>
-    </dependencies>
+    
+		</dependency>
+    
+	</dependencies>
 		
 ~~~
 
@@ -50,12 +56,17 @@
 ~~~java
 
 import java.awt.Dimension;
+
 import java.awt.event.ActionEvent;
+
 import java.io.IOException;
 
 import javax.swing.GroupLayout;
+
 import javax.swing.GroupLayout.Alignment;
+
 import javax.swing.JFrame;
+
 import javax.swing.event.ChangeEvent;
 
 import net.java.dev.colorchooser.demo.CopyColor;

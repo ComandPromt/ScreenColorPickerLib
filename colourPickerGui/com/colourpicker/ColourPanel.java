@@ -32,8 +32,6 @@ import org.jnativehook.NativeHookException;
 import com.bric.swing.ColorPickerDialog;
 import com.bric.swing.ColorSwatch;
 
-import net.java.dev.colorchooser.TextColor;
-
 @SuppressWarnings("all")
 
 public class ColourPanel extends JFrame implements ActionListener, ChangeListener {
@@ -45,9 +43,6 @@ public class ColourPanel extends JFrame implements ActionListener, ChangeListene
 	Robot robot;
 
 	public static void cerrar() throws NativeHookException {
-
-		TextColor.color
-				.setText(String.format("#%02x%02x%02x", colour.getRed(), colour.getGreen(), colour.getBlue()) + 255);
 
 		ColorPickerDialog.cp.setColor(colour);
 

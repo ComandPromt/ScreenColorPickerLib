@@ -32,8 +32,6 @@ import com.bric.swing.ColorPicker;
 import com.bric.swing.ColorPickerDialog;
 import com.bric.swing.ColorSwatch;
 
-import net.java.dev.colorchooser.TextColor;
-
 @SuppressWarnings("all")
 
 public class ColourPicker extends JFrame implements ActionListener, ChangeListener {
@@ -46,10 +44,7 @@ public class ColourPicker extends JFrame implements ActionListener, ChangeListen
 
 	public static void cerrar() throws NativeHookException {
 
-		if (colour != null && TextColor.color != null) {
-
-			TextColor.color.setText(
-					String.format("#%02x%02x%02x", colour.getRed(), colour.getGreen(), colour.getBlue()) + 255);
+		if (colour != null) {
 
 			ColorPickerDialog.cp.setColor(colour);
 

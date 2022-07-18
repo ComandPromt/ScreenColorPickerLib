@@ -14,9 +14,6 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 
-import net.java.dev.colorchooser.ColorChooser;
-import net.java.dev.colorchooser.TextColor;
-
 public class ColorPickerDialog extends JDialog {
 
 	private static final long serialVersionUID = 1L;
@@ -40,17 +37,6 @@ public class ColorPickerDialog extends JDialog {
 			if (src == ok) {
 
 				returnValue = cp.getColor();
-
-				String transparencia = "";
-
-				if (ColorChooser.transparency) {
-
-					transparencia = Integer.toHexString(ColorPicker.opacitySlider.getValue());
-
-				}
-
-				TextColor.color.setText(String.format("#%02x%02x%02x", returnValue.getRed(), returnValue.getGreen(),
-						returnValue.getBlue()) + transparencia);
 
 			}
 
