@@ -36,11 +36,12 @@ public class CopyColor extends javax.swing.JPanel {
 
 	}
 
-	public void setColor(Color color) {
+	void setColor(Color color) {
 
 		this.colour = color;
 
 		lblNewLabel.setColor(color);
+
 	}
 
 	public CopyColor(Color color, boolean transparency) throws IOException {
@@ -90,7 +91,7 @@ public class CopyColor extends javax.swing.JPanel {
 
 	public Color getColor() {
 
-		return colour;
+		return lblNewLabel.getColor();
 
 	}
 
