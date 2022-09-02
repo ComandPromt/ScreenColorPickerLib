@@ -46,7 +46,7 @@ class RecentColors extends Palette {
 
 		try {
 
-			return ResourceBundle.getBundle("org.netbeans.swing.colorchooser.Bundle").getString("recent"); 
+			return ResourceBundle.getBundle("org.netbeans.swing.colorchooser.Bundle").getString("recent");
 
 		} catch (MissingResourceException mre) {
 
@@ -191,11 +191,11 @@ class RecentColors extends Palette {
 
 			}
 
-			sb.append(OUTER_DELIMITER); 
+			sb.append(OUTER_DELIMITER);
 
 		}
 
-		prefs.put("recentColors", sb.toString()); 
+		prefs.put("recentColors", sb.toString());
 
 	}
 
@@ -233,7 +233,7 @@ class RecentColors extends Palette {
 
 			Preferences base = Preferences.userNodeForPackage(getClass());
 
-			return base.node("1.5"); 
+			return base.node("1.5");
 
 		}
 
@@ -252,7 +252,7 @@ class RecentColors extends Palette {
 		if (prefs == null)
 			return;
 
-		String s = prefs.get("recentColors", null); 
+		String s = prefs.get("recentColors", null);
 
 		stack = new Stack();
 
@@ -266,13 +266,13 @@ class RecentColors extends Palette {
 
 			if (s != null) {
 
-				StringTokenizer tok = new StringTokenizer(s, OUTER_DELIMITER); 
+				StringTokenizer tok = new StringTokenizer(s, OUTER_DELIMITER);
 
 				while (tok.hasMoreTokens() && count >= 0) {
 
 					String curr = tok.nextToken();
 
-					StringTokenizer tk2 = new StringTokenizer(curr, INNER_DELIMITER); 
+					StringTokenizer tk2 = new StringTokenizer(curr, INNER_DELIMITER);
 
 					while (tk2.hasMoreTokens()) {
 
@@ -292,7 +292,7 @@ class RecentColors extends Palette {
 
 						String toString = tk2.nextToken();
 
-						if ("x".equals(toString)) { 
+						if ("x".equals(toString)) {
 
 							col[count] = new RecentColor(name, r, g, b);
 
@@ -399,7 +399,7 @@ class RecentColors extends Palette {
 
 			else {
 
-				return "new java.awt.Color(" + getRed() + "," + getGreen() + "," + getBlue() + ")"; 
+				return "new java.awt.Color(" + getRed() + "," + getGreen() + "," + getBlue() + ")";
 
 			}
 

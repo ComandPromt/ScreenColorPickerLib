@@ -1,5 +1,5 @@
 
-package com.bric.swing;
+package com.bric.awt;
 
 import java.awt.Color;
 import java.awt.Container;
@@ -477,11 +477,11 @@ public class ColorPicker extends JPanel {
 
 	private Option bri = new Option(strings.getObject("brightnessLabel").toString(), 100);
 
-	private Option red = new Option(strings.getObject("redLabel").toString(), 255);
+	public Option red = new Option(strings.getObject("redLabel").toString(), 255);
 
-	private Option green = new Option(strings.getObject("greenLabel").toString(), 255);
+	public Option green = new Option(strings.getObject("greenLabel").toString(), 255);
 
-	private Option blue = new Option(strings.getObject("blueLabel").toString(), 255);
+	public Option blue = new Option(strings.getObject("blueLabel").toString(), 255);
 
 	private ColorSwatch preview = new ColorSwatch(50);
 

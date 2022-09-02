@@ -1,5 +1,5 @@
 
-package com.bric.swing;
+package com.bric.awt;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -17,8 +17,6 @@ import java.awt.image.BufferedImage;
 import javax.swing.JSlider;
 import javax.swing.event.MouseInputAdapter;
 import javax.swing.plaf.basic.BasicSliderUI;
-
-import com.bric.awt.PaintUtils;
 
 class ColorPickerSliderUI extends BasicSliderUI {
 

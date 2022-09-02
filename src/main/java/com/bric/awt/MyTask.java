@@ -1,9 +1,7 @@
-package com.bric.swing;
+package com.bric.awt;
 
 import java.awt.AWTException;
 import java.util.TimerTask;
-
-import com.colourpicker.ColourPicker;
 
 public class MyTask extends TimerTask {
 

@@ -12,7 +12,7 @@ import java.io.IOException;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
-import com.bric.swing.ColorPicker;
+import com.bric.awt.ColorPicker;
 
 import net.java.dev.colorchooser.ColorChooser;
 
@@ -34,6 +34,13 @@ public class CopyColor extends javax.swing.JPanel {
 
 		return systemClipboard;
 
+	}
+
+	public void setColor(Color color) {
+
+		this.colour = color;
+
+		lblNewLabel.setColor(color);
 	}
 
 	public CopyColor(Color color, boolean transparency) throws IOException {
@@ -83,7 +90,7 @@ public class CopyColor extends javax.swing.JPanel {
 
 	public Color getColor() {
 
-		return lblNewLabel.getColor();
+		return colour;
 
 	}
 

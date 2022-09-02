@@ -1,5 +1,5 @@
 
-package com.bric.swing;
+package com.bric.awt;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -30,8 +30,6 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.MouseInputAdapter;
 import javax.swing.event.MouseInputListener;
-
-import com.bric.awt.PaintUtils;
 
 public class ColorPickerPanel extends JPanel {
 

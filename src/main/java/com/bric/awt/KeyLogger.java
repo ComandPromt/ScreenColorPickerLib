@@ -1,4 +1,4 @@
-package com.colourpicker;
+package com.bric.awt;
 
 import java.awt.Robot;
 

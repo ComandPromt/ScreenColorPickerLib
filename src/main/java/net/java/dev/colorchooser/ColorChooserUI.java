@@ -18,7 +18,7 @@ import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
 import javax.swing.plaf.ComponentUI;
 
-import com.bric.swing.ColorPicker;
+import com.bric.awt.ColorPicker;
 
 public abstract class ColorChooserUI extends ComponentUI {
 

@@ -1,5 +1,5 @@
 
-package com.bric.swing;
+package com.bric.awt;
 
 import java.awt.Image;
 

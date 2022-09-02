@@ -1,4 +1,4 @@
-package com.colourpicker;
+package com.bric.awt;
 
 import java.awt.AWTException;
 import java.awt.BorderLayout;
@@ -28,9 +28,6 @@ import javax.swing.event.ChangeListener;
 
 import org.jnativehook.GlobalScreen;
 import org.jnativehook.NativeHookException;
-
-import com.bric.swing.ColorPickerDialog;
-import com.bric.swing.ColorSwatch;
 
 @SuppressWarnings("all")
 

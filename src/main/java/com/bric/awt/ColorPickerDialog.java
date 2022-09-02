@@ -1,4 +1,4 @@
-package com.bric.swing;
+package com.bric.awt;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -26,7 +26,7 @@ public class ColorPickerDialog extends JDialog {
 
 	JButton cancel = new JButton(ColorPicker.strings.getObject("Cancel").toString());
 
-	Color returnValue = null;
+	public static Color returnValue = null;
 
 	ActionListener buttonListener = new ActionListener() {
 

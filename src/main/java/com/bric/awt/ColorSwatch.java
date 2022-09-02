@@ -1,5 +1,5 @@
 
-package com.bric.swing;
+package com.bric.awt;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -23,8 +23,6 @@ import javax.swing.JButton;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
-
-import com.bric.awt.PaintUtils;
 
 public class ColorSwatch extends JPanel {
 

@@ -1,4 +1,4 @@
-package com.colourpicker;
+package com.bric.awt;
 
 import org.jnativehook.GlobalScreen;
 import org.jnativehook.NativeHookException;

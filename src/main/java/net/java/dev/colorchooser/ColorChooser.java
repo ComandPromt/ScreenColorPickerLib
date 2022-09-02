@@ -19,7 +19,7 @@ public final class ColorChooser extends JComponent {
 
 	public Color color = Color.BLUE;
 
-	private transient Color transientColor = null;
+	public transient Color transientColor = null;
 
 	private transient List<ActionListener> actionListenerList;
 
@@ -50,8 +50,6 @@ public final class ColorChooser extends JComponent {
 		this(null, initialColor);
 
 		this.setBackground(Color.WHITE);
-
-		setBackground(Color.WHITE);
 
 	}
 
@@ -117,23 +115,15 @@ public final class ColorChooser extends JComponent {
 
 	public void setColor(Color c) {
 
-		if (c.getClass() != Color.class) {
+		transientColor = c;
 
-			c = new Color(c.getRed(), c.getGreen(), c.getBlue());
+		Color old = color;
 
-		}
+		color = c;
 
-		if ((color != null && !color.equals(c)) || (color == null && c != null)) {
+		repaint();
 
-			Color old = color;
-
-			color = c;
-
-			repaint();
-
-			firePropertyChange(PROP_COLOR, old, c);
-
-		}
+		firePropertyChange(PROP_COLOR, old, c);
 
 	}
 
