@@ -36,7 +36,7 @@ public class CopyColor extends javax.swing.JPanel {
 
 	}
 
-	void setColor(Color color) {
+	public void setColor(Color color) {
 
 		this.colour = color;
 
