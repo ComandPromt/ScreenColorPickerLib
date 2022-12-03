@@ -1,7 +1,6 @@
 package com.bric.awt;
 
 import org.jnativehook.GlobalScreen;
-import org.jnativehook.NativeHookException;
 import org.jnativehook.mouse.NativeMouseEvent;
 import org.jnativehook.mouse.NativeMouseListener;
 
@@ -17,17 +16,7 @@ public class MouseLogger implements NativeMouseListener {
 
 		catch (Exception e) {
 
-			try {
-
-				ColourPicker.cerrar();
-
-			}
-
-			catch (NativeHookException e1) {
-
-				e1.printStackTrace();
-
-			}
+			ColourPicker.cerrar();
 
 		}
 
@@ -41,33 +30,13 @@ public class MouseLogger implements NativeMouseListener {
 
 	public void nativeMousePressed(NativeMouseEvent nativeEvent) {
 
-		try {
-
-			ColourPicker.cerrar();
-
-		}
-
-		catch (NativeHookException e) {
-
-			e.printStackTrace();
-
-		}
+		ColourPicker.cerrar();
 
 	}
 
 	public void nativeMouseReleased(NativeMouseEvent nativeEvent) {
 
-		try {
-
-			ColourPicker.cerrar();
-
-		}
-
-		catch (NativeHookException e) {
-
-			e.printStackTrace();
-
-		}
+		ColourPicker.cerrar();
 
 	}
 

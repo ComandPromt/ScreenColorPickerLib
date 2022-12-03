@@ -28,6 +28,8 @@ import javax.swing.event.ChangeListener;
 import org.jnativehook.GlobalScreen;
 import org.jnativehook.NativeHookException;
 
+import net.java.dev.colorchooser.demo.CopyColor;
+
 @SuppressWarnings("all")
 
 public class ColourPicker extends JFrame implements ActionListener, ChangeListener {
@@ -38,20 +40,44 @@ public class ColourPicker extends JFrame implements ActionListener, ChangeListen
 
 	Robot robot;
 
-	public static void cerrar() throws NativeHookException {
+	public static void cerrar() {
+		try {
 
-		if (colour != null) {
+			if (colour != null) {
 
-			ColorPickerDialog.cp.setColor(colour);
+				ColorPickerDialog.cp.setColor(colour);
 
-			ColorSwatch.t.cancel();
+				ColorSwatch.t.cancel();
 
-			frame.dispose();
+			}
 
 		}
 
-		GlobalScreen.unregisterNativeHook();
+		catch (Exception e) {
 
+		}
+
+		finally {
+
+			try {
+
+				if (colour != null) {
+
+					CopyColor.colorSelect.setColor(colour);
+
+				}
+
+				GlobalScreen.unregisterNativeHook();
+
+				frame.dispose();
+
+			}
+
+			catch (NativeHookException e) {
+
+			}
+
+		}
 	}
 
 	public ColourPicker() throws AWTException {

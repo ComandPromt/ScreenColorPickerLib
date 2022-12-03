@@ -16,7 +16,7 @@ public class MyTask extends TimerTask {
 		}
 
 		catch (AWTException e) {
-
+			e.printStackTrace();
 		}
 
 	}

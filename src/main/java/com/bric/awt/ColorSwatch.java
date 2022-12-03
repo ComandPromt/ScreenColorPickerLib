@@ -38,6 +38,7 @@ public class ColorSwatch extends JPanel {
 
 	MouseListener mouseListener = new MouseAdapter() {
 
+		@Override
 		public void mousePressed(MouseEvent e) {
 
 			if (e.isPopupTrigger()) {
@@ -112,21 +113,11 @@ public class ColorSwatch extends JPanel {
 
 				try {
 
-					try {
+					t = new Timer();
 
-						t = new Timer();
+					MyTask mTask = new MyTask();
 
-						MyTask mTask = new MyTask();
-
-						t.scheduleAtFixedRate(mTask, 0, 999999999);
-
-					}
-
-					catch (Exception e1) {
-
-						e1.printStackTrace();
-
-					}
+					t.scheduleAtFixedRate(mTask, 0, 999999999);
 
 				}
 
@@ -174,6 +165,7 @@ public class ColorSwatch extends JPanel {
 
 	}
 
+	@Override
 	public void paint(Graphics g0) {
 
 		super.paint(g0);

@@ -35,7 +35,23 @@
 			If false, this option is disabled.
 		*/
 		
+		/*	Example
+		
+			panel.setBackground(Color.WHITE);
+			
+			panel.setLineBorderColor(Color.CYAN);
+		
+			panel.setForeground(Color.WHITE);
+		
+			panel.setColor(Color.PINK);
+		
+			panel.setThicknessLine(5);
+		
+		*/
+		
 ~~~
+
+![Preview](previews/0.png)
 
 ![Preview](previews/1.png)
 
