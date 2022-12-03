@@ -11,6 +11,7 @@ import java.io.IOException;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.border.LineBorder;
 
 import com.bric.awt.ColorPicker;
 
@@ -44,13 +45,19 @@ public class CopyColor extends javax.swing.JPanel {
 
 	}
 
+	public void setLineBorderColor(Color color) {
+
+		setBorder(new LineBorder(color));
+
+	}
+
 	public CopyColor(Color color, boolean transparency) throws IOException {
+
+		setBorder(new LineBorder(new Color(0, 0, 0)));
 
 		this.colour = color;
 
 		this.transparency = transparency;
-
-		setBackground(Color.WHITE);
 
 		this.setBackground(Color.WHITE);
 
