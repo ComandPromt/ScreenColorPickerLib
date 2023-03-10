@@ -82,12 +82,12 @@ public class CopyColor extends javax.swing.JPanel {
 
 		btnNewButton_2.addActionListener(new ActionListener() {
 
-			@Override
 			public void actionPerformed(ActionEvent e) {
 
 				Clipboard clipboard = getSystemClipboard();
 
 				clipboard.setContents(new StringSelection(getHtmlColor()), null);
+
 			}
 
 		});
