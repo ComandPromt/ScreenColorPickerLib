@@ -33,7 +33,7 @@ public final class ColorChooser extends JComponent {
 
 	private boolean continuousPalette = true;
 
-	public static boolean transparency;
+	public boolean transparency;
 
 	public ColorChooser() {
 

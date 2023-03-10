@@ -3,7 +3,6 @@ package com.bric.awt;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
@@ -18,8 +17,6 @@ import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.util.Timer;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
@@ -98,38 +95,6 @@ public class ColorSwatch extends JPanel {
 		setPreferredSize(new Dimension(134, 112));
 
 		setMinimumSize(new Dimension(width, width));
-
-		JButton btnNewButton = new JButton("Color Picker");
-
-		btnNewButton.setContentAreaFilled(false);
-
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 14));
-
-		btnNewButton.setIcon(new ImageIcon(ColorSwatch.class.getResource("/images/color_picker.png")));
-
-		btnNewButton.addActionListener(new ActionListener() {
-
-			public void actionPerformed(ActionEvent e) {
-
-				try {
-
-					t = new Timer();
-
-					MyTask mTask = new MyTask();
-
-					t.scheduleAtFixedRate(mTask, 0, 999999999);
-
-				}
-
-				catch (Exception e1) {
-
-				}
-
-			}
-
-		});
-
-		add(btnNewButton);
 
 		addMouseListener(mouseListener);
 

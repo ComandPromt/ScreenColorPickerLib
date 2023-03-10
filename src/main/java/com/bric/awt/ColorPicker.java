@@ -29,8 +29,6 @@ import javax.swing.event.ChangeListener;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 
-import net.java.dev.colorchooser.demo.CopyColor;
-
 public class ColorPicker extends JPanel {
 
 	private static final long serialVersionUID = 3L;
@@ -198,7 +196,7 @@ public class ColorPicker extends JPanel {
 
 				int v = alpha.getIntValue();
 
-				setOpacity(((float) v) / 255f);
+				setOpacity((v) / 255f);
 
 			}
 
@@ -208,7 +206,7 @@ public class ColorPicker extends JPanel {
 
 					return;
 
-				float newValue = (((float) opacitySlider.getValue()) / 255f);
+				float newValue = ((opacitySlider.getValue()) / 255f);
 
 				setOpacity(newValue);
 
@@ -320,6 +318,7 @@ public class ColorPicker extends JPanel {
 
 		}
 
+		@Override
 		public void run() {
 
 			if (SwingUtilities.isEventDispatchThread() == false) {
@@ -744,7 +743,7 @@ public class ColorPicker extends JPanel {
 
 		setExpertControlsVisible(showExpertControls);
 
-		setOpacityVisible(CopyColor.transparency);
+		setOpacityVisible(includeOpacity);
 
 		opacitySlider.addChangeListener(changeListener);
 
@@ -786,7 +785,7 @@ public class ColorPicker extends JPanel {
 
 	public float getOpacity() {
 
-		return ((float) opacitySlider.getValue()) / 255f;
+		return (opacitySlider.getValue()) / 255f;
 
 	}
 
@@ -929,7 +928,7 @@ public class ColorPicker extends JPanel {
 
 		setRGB(c.getRed(), c.getGreen(), c.getBlue());
 
-		float opacity = ((float) c.getAlpha()) / 255f;
+		float opacity = (c.getAlpha()) / 255f;
 
 		setOpacity(opacity);
 

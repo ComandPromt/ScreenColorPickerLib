@@ -12,10 +12,10 @@ import java.util.Timer;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 
 import com.bric.awt.ColorPicker;
-import com.bric.awt.MyTask;
 
 import net.java.dev.colorchooser.ColorChooser;
 
@@ -23,15 +23,13 @@ import net.java.dev.colorchooser.ColorChooser;
 
 public class CopyColor extends javax.swing.JPanel {
 
-	public static boolean transparency;
+	public boolean transparency;
 
 	Color colour;
 
-	Color colourLine;
+	ColorChooser lblNewLabel;
 
-	public static ColorChooser colorSelect;
-
-	public static Timer t;
+	public Timer t;
 
 	private static Clipboard getSystemClipboard() {
 
@@ -43,52 +41,48 @@ public class CopyColor extends javax.swing.JPanel {
 
 	}
 
-	public void setColor(Color color) {
-
-		this.colour = color;
-
-		colorSelect.setColor(color);
-
-	}
-
 	public void setLineBorderColor(Color color) {
-
-		this.colourLine = color;
 
 		setBorder(new LineBorder(color));
 
 	}
 
-	public void setThicknessLine(int thickness) {
+	public void setColor(Color color) {
 
-		setBorder(new LineBorder(this.colourLine, thickness));
+		this.colour = color;
+
+		lblNewLabel.setColor(color);
 
 	}
 
 	public CopyColor(Color color, boolean transparency) throws IOException {
 
-		this.colourLine = Color.BLACK;
+		setBorder(new LineBorder(new Color(0, 0, 0)));
 
 		this.colour = color;
 
 		this.transparency = transparency;
 
+		setBackground(Color.WHITE);
+
 		this.setBackground(Color.WHITE);
 
-		setBorder(new LineBorder(this.colourLine));
+		lblNewLabel = new ColorChooser();
 
-		colorSelect = new ColorChooser();
+		lblNewLabel.setColor(color);
 
-		colorSelect.setColor(color);
+		lblNewLabel.transparency = transparency;
 
-		colorSelect.transparency = transparency;
+		lblNewLabel.setBorder(
+				new BevelBorder(BevelBorder.RAISED, Color.GRAY, Color.LIGHT_GRAY, Color.GRAY, Color.LIGHT_GRAY));
 
-		add(colorSelect);
+		add(lblNewLabel);
 
-		JButton copy = new JButton("Copy");
+		JButton btnNewButton_2 = new JButton("Copy");
 
-		copy.addActionListener(new ActionListener() {
+		btnNewButton_2.addActionListener(new ActionListener() {
 
+			@Override
 			public void actionPerformed(ActionEvent e) {
 
 				Clipboard clipboard = getSystemClipboard();
@@ -98,55 +92,23 @@ public class CopyColor extends javax.swing.JPanel {
 
 		});
 
-		JButton colorPicker = new JButton("");
+		btnNewButton_2.setBorder(null);
 
-		colorPicker.setBorder(null);
+		btnNewButton_2.setContentAreaFilled(false);
 
-		colorPicker.setContentAreaFilled(false);
+		btnNewButton_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
 
-		colorPicker.addActionListener(new ActionListener() {
+		btnNewButton_2.setIcon(new ImageIcon(CopyColor.class.getResource("/images/copy.png")));
 
-			public void actionPerformed(ActionEvent e) {
+		add(btnNewButton_2);
 
-				try {
-
-					t = new Timer();
-
-					MyTask mTask = new MyTask();
-
-					t.scheduleAtFixedRate(mTask, 0, 999999999);
-
-				}
-
-				catch (Exception e1) {
-
-				}
-
-			}
-
-		});
-
-		colorPicker.setIcon(new ImageIcon(CopyColor.class.getResource("/images/color_picker.png")));
-
-		add(colorPicker);
-
-		copy.setBorder(null);
-
-		copy.setContentAreaFilled(false);
-
-		copy.setFont(new Font("Tahoma", Font.PLAIN, 14));
-
-		copy.setIcon(new ImageIcon(CopyColor.class.getResource("/images/copy.png")));
-
-		add(copy);
-
-		setSize(215, 36);
+		setSize(163, 36);
 
 	}
 
 	public Color getColor() {
 
-		return colorSelect.getColor();
+		return lblNewLabel.getColor();
 
 	}
 
@@ -154,7 +116,7 @@ public class CopyColor extends javax.swing.JPanel {
 
 		Color color;
 
-		if (this.colorSelect.getColor() == null) {
+		if (this.lblNewLabel.getColor() == null) {
 
 			color = colour;
 
@@ -162,7 +124,7 @@ public class CopyColor extends javax.swing.JPanel {
 
 		else {
 
-			color = this.colorSelect.getColor();
+			color = this.lblNewLabel.getColor();
 
 		}
 
