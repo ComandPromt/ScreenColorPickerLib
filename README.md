@@ -1,4 +1,4 @@
-# LibColourPickerWithDesktopColorSelector
+# ScreenColorPickerLib
 
 - pom.xml
 
